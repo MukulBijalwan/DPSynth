@@ -1,0 +1,42 @@
+---
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+# Official Statistics Workflow with PUMS-like Microdata
+
+Statistical agencies need consistent marginals and releasable privacy
+reports when publishing synthetic microdata.
+
+```{r}
+library(DPSynth)
+data(acs_pums_sample)
+set.seed(2)
+
+synth <- dp_synthesize(acs_pums_sample, method = "copula",
+                       epsilon = 3.0, delta = 1e-6, n_synth = 500,
+                       risk_audit = FALSE)
+print(synth)
+
+# Post-processing: enforce non-negative income
+synth$synthetic_data$income <- pmax(synth$synthetic_data$income, 0)
+```
+
+Consistency of released marginals:
+
+```{r}
+u <- evaluate_univariate(synth$synthetic_data, acs_pums_sample)
+u
+```
+
+Releasing the privacy report alongside the synthetic file:
+
+```{r}
+budget <- new_synth_budget(epsilon = 5, delta = 1e-6, accounting = "rdp")
+budget <- spend_synth(budget, 3.0, description = "DP-copula synthesis")
+budget <- spend_synth(budget, 1.0, description = "DP marginal check")
+check_synth_budget(budget)
+```

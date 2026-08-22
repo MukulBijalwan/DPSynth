@@ -1,0 +1,6 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^DPSynth_.*\.tar\.gz$
+^\.Rcheck$
+^README\.Rmd$

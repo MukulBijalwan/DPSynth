@@ -1,0 +1,32 @@
+Package: DPSynth
+Type: Package
+Title: Differentially Private Synthetic Data with Guaranteed Utility
+Version: 0.1.0
+Authors@R: person("Mukul", "Bijalwan",
+    email = "mukulbijalwan555@gmail.com", role = c("aut", "cre"))
+Description: Differentially private (DP) synthetic data generation for
+    tabular data. Provides DP Gaussian mixture models, DP Gaussian copulas,
+    DP histogram marginals and a Private Aggregation of Teacher Ensembles
+    (PATE) synthesizer for mixed-type data, together with a standardized
+    utility evaluation framework (univariate fidelity, propensity score
+    MSE, multivariate dependence, downstream task performance), empirical
+    disclosure risk auditing (membership inference, attribute disclosure,
+    record linkage) and privacy budget accounting (basic, advanced and
+    Renyi DP composition).
+License: MIT + file LICENSE
+Encoding: UTF-8
+Depends: R (>= 4.1.0)
+Imports:
+    stats,
+    utils,
+    MASS
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+LazyData: true
+Config/testthat/edition: 3
+URL: https://github.com/MukulBijalwan/DPSynth
+BugReports: https://github.com/MukulBijalwan/DPSynth/issues
+RoxygenNote: 7.3.2

@@ -1,0 +1,43 @@
+---
+title: "Health Data: Mixed Types and Disclosure Risk"
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+# Synthesizing EHR-like Data
+
+Health records mix continuous lab values, categorical diagnoses and
+outcomes. This vignette synthesizes such data and audits disclosure risk.
+
+```{r}
+library(DPSynth)
+set.seed(3)
+n <- 400
+ehr <- data.frame(
+  age        = as.integer(pmin(100, pmax(18, round(rnorm(n, 60, 15))))),
+  labs       = rnorm(n, 5, 1.5),
+  diagnosis  = factor(sample(c("I10", "E11", "J44", "N18"), n,
+                             replace = TRUE)),
+  readmitted = factor(sample(c("no", "<30d", ">30d"), n,
+                             prob = c(.6, .15, .25), replace = TRUE))
+)
+
+res <- dp_synthesize(ehr, method = "copula", epsilon = 2, n_synth = 400)
+head(res$synthetic_data)
+print(res)
+
+# Empirical disclosure risk beyond the theoretical epsilon guarantee
+res$risk$membership$risk_score
+res$risk$attribute$mean_disclosure_error
+```
+
+Downstream validation -- predicting readmission from synthetic training
+data and testing on real held-out records:
+
+```{r}
+ds <- evaluate_downstream(res$synthetic_data, ehr, target_var = "age")
+ds
+```

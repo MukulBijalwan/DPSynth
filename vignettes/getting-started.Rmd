@@ -1,0 +1,50 @@
+---
+output: html_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+# Getting Started with DPSynth
+
+`DPSynth` generates differentially private (DP) synthetic versions of
+tabular data. The model parameters are privatized; sampling from the
+released model is post-processing and costs no additional budget.
+
+```{r setup}
+library(DPSynth)
+
+data(adult_sample)
+set.seed(1)
+synth_result <- dp_synthesize(adult_sample, method = "copula",
+                              epsilon = 2.0, delta = 1e-6,
+                              n_synth = 300, risk_audit = FALSE)
+head(synth_result$synthetic_data)
+print(synth_result)
+```
+
+Compare a numeric marginal:
+
+```{r marginals}
+op <- par(mfrow = c(1, 2))
+hist(adult_sample$age, breaks = 20, main = "Original age",
+     col = "steelblue", xlab = "age")
+hist(synth_result$synthetic_data$age, breaks = 20,
+     main = "Synthetic age", col = "indianred", xlab = "age")
+par(op)
+```
+
+Other methods:
+
+```{r other}
+res_marg <- suppressWarnings(dp_synthesize(adult_sample,
+                                           method = "marginals",
+                                           epsilon = 2, n_synth = 300,
+                                           risk_audit = FALSE))
+res_gmm <- dp_synthesize(adult_sample[, vapply(adult_sample, is.numeric,
+                                               logical(1))],
+                         method = "gmm", epsilon = 2, n_synth = 300,
+                         risk_audit = FALSE)
+print(res_marg); print(res_gmm)
+```
