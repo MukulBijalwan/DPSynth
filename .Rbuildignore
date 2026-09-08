@@ -4,3 +4,7 @@
 ^DPSynth_.*\.tar\.gz$
 ^\.Rcheck$
 ^README\.Rmd$
+^cran-comments\.md$
+^\.github$
+^\.gitignore$
+^NEWS\.md$

@@ -1,5 +1,10 @@
 ---
-output: html_document
+title: "Official Statistics Workflow with PUMS-like Microdata"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Official Statistics Workflow with PUMS-like Microdata}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}

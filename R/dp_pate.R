@@ -72,6 +72,7 @@ dp_pate_synth <- function(data, n_synth = nrow(data), epsilon = 1.0,
 }
 
 # Internal teacher models: per-column mean / mode
+#' @keywords internal
 fit_teacher <- function(data) {
   numeric <- lapply(seq_along(data), function(j)
     list(mean = mean(data[[j]], na.rm = TRUE)))

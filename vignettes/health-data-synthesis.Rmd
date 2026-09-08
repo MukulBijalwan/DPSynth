@@ -1,6 +1,10 @@
 ---
 title: "Health Data: Mixed Types and Disclosure Risk"
-output: html_document
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Health Data: Mixed Types and Disclosure Risk}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
 ---
 
 ```{r, include = FALSE}

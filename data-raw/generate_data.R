@@ -21,7 +21,6 @@ adult_sample <- data.frame(
   income         = factor(sample(c("<=50K", ">50K"), n_adult, prob = c(.76, .24),
                                  replace = TRUE))
 )
-usethis_is_absent <- TRUE # placeholder to keep script dependency-free
 
 n_acs <- 500
 acs_pums_sample <- data.frame(

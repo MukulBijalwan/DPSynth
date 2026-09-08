@@ -64,7 +64,7 @@ dp_gmm_synth <- function(data, n_synth = nrow(data), K = 3,
     # E-step (local, no privacy cost)
     resp <- matrix(0, n, K)
     for (k in seq_len(K)) {
-      loglik <- dnorm(X, matrix(centers[k, ], n, d, byrow = TRUE),
+      loglik <- stats::dnorm(X, matrix(centers[k, ], n, d, byrow = TRUE),
                       matrix(sqrt(covars[k, ]), n, d, byrow = TRUE), log = TRUE)
       resp[, k] <- weights[k] * exp(rowSums(loglik))
     }

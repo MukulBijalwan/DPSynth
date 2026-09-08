@@ -103,6 +103,7 @@ dp_copula_synth <- function(data, n_synth = nrow(data),
 
 # Project a symmetric matrix to the nearest positive-definite matrix by
 # eigenvalue clipping (Higham-style simple variant).
+#' @keywords internal
 nearest_correlation <- function(R, min_eig = 0.01) {
   eig <- eigen(R, symmetric = TRUE)
   vals <- pmax(eig$values, min_eig)
