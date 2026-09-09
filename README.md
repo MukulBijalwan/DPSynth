@@ -1,11 +1,11 @@
 # DPSynth
 
 <!-- CRAN-compatible badges -->
-[![CRAN status](https://www.r-pkg.org/badges/version/DPSynth)](https://CRAN.R-project.org/package=DPSynth)
-[![CRAN checks](https://badges.r-pkg.org/DPSynth/summary)](https://cran.r-project.org/web/checks/check_results_DPSynth.html)
-[![R-CMD-check](https://github.com/MukulBijalwan/DPSynth/actions/workflows/R-CMD-check/badge.svg)](https://github.com/MukulBijalwan/DPSynth/actions/workflows/R-CMD-check)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Lifecycle: stable](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
+[![R-CMD-check](https://github.com/MukulBijalwan/DPSynth/actions/workflows/R-CMD-check/badge.svg)](https://github.com/MukulBijalwan/DPSynth/actions/workflows/R-CMD-check)
+[![CRAN status](https://www.r-pkg.org/badges/version/DPSynth)](https://CRAN.R-project.org/package=DPSynth)
+[![Downloads](https://cranlogs.r-pkg.org/badges/grand-total/DPSynth)](https://CRAN.R-project.org/package=DPSynth)
 
 **Differentially Private Synthetic Data with Guaranteed Utility**
 
