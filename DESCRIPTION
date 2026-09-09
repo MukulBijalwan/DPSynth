@@ -2,8 +2,10 @@ Package: DPSynth
 Type: Package
 Title: Differentially Private Synthetic Data with Guaranteed Utility
 Version: 0.1.0
-Authors@R: person("Mukul", "Bijalwan",
-    email = "mukulbijalwan555@gmail.com", role = c("aut", "cre")) | person("Gunjan", "Aggarwal", role = "aut") | person("Mukul", "Jain", role = "aut")
+Authors@R: c(person("Mukul", "Bijalwan",
+    email = "mukulbijalwan555@gmail.com", role = c("aut", "cre")),
+    person("Gunjan", "Aggarwal", role = "aut"),
+    person("Mukul", "Jain", role = "aut"))
 Maintainer: Mukul Bijalwan <mukulbijalwan555@gmail.com>
 Description: Differentially private (DP) synthetic data generation for
     tabular data. Provides DP Gaussian mixture models, DP Gaussian copulas,
