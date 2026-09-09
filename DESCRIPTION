@@ -15,7 +15,7 @@ Description: Differentially private (DP) synthetic data generation for
     MSE, multivariate dependence, downstream task performance), empirical
     disclosure risk auditing (membership inference, attribute disclosure,
     record linkage) and privacy budget accounting (basic, advanced and
-    Renyi DP composition).
+    Rényi DP composition).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
