@@ -75,6 +75,7 @@ dp_synthesize <- function(data, method = "copula", n_synth = nrow(data),
 #'
 #' @param x a \code{dp_synthesis_result}
 #' @param ... unused
+#' @return the input \code{x}, returned invisibly (called for side effects).
 #' @export
 print.dp_synthesis_result <- function(x, ...) {
   cat("=== Differentially Private Synthetic Data ===\n")

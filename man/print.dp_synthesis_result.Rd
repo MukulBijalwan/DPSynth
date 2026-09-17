@@ -14,3 +14,8 @@
 \description{
 Print a synthesis result
 }
+
+\value{
+No return value, called for side effects. The input \code{x} is returned
+invisibly.
+}

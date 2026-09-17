@@ -1,0 +1,14 @@
+# R build artifacts
+DPSynth.Rcheck/
+*.tar.gz
+*.zip
+
+# R environment
+.RData
+.Rhistory
+.Rprofile
+.Rproj.user
+
+# OS files
+.DS_Store
+Thumbs.db
