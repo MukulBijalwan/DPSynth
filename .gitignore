@@ -12,3 +12,6 @@ DPSynth.Rcheck/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Leftover check files
+DESCRIPTION_check.txt

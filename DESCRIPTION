@@ -15,7 +15,12 @@ Description: Differentially private (DP) synthetic data generation for
     MSE, multivariate dependence, downstream task performance), empirical
     disclosure risk auditing (membership inference, attribute disclosure,
     record linkage) and privacy budget accounting (basic, advanced and
-    Rényi DP composition).
+    Renyi DP composition). The implementation follows Dwork and Roth
+    (2014) <doi:10.1561/0400000042> and Dwork et al. (2006)
+    <doi:10.1007/11681878_14> for the DP mechanisms, Papernot et al.
+    (2017) <doi:10.1145/3133956.3133982> for the PATE synthesizer, and
+    Woo et al. (2009) <doi:10.2202/1557-4679.1203> for the disclosure
+    risk evaluation framework.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.1.0)
@@ -32,14 +37,4 @@ LazyData: true
 Config/testthat/edition: 3
 URL: https://github.com/MukulBijalwan/DPSynth
 BugReports: https://github.com/MukulBijalwan/DPSynth/issues
-References:
-    Dwork, C., Roth, A. (2014) <doi:10.1561/0400000042> "The Algorithmic
-    Foundations of Differential Privacy"; Dwork, C., McSherry, F., Nissim, K.,
-    Smith, A. (2006) "Calibrating Noise to Sensitivity in Private Data Analysis"
-    <doi:10.1007/11681878_14>; Papernot, N., Abadi, M., Erlingsson, U.,
-    Goodfellow, I., McMahan, H. B. (2017) "Semi-supervised Knowledge Transfer
-    for Deep Learning from Private Training Data" <doi:10.1145/3133956.3133982>;
-    Woo, M. J., Watson, C. B., Borden, C. T., Van Durme, J. (2009) "An
-    Evaluation of Quantitative and Qualitative Methods for Estimating the
-    Disclosure Risk from Synthetic Data" <doi:10.2202/1557-4679.1203>
 
